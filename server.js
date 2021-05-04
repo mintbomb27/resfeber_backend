@@ -1,37 +1,56 @@
 require("dotenv").config();
 
 //dependencies
-const cron = require("node-cron");
+//const cron = require("node-cron");
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 
-const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/covid_app";
+//const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/covid_app";
+
+
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+  // Swagger config
+  const swaggerOptions = {
+    swaggerDefinition: {
+      info: {
+        version: "1.0.0",
+        title: "Resfeber API",
+        description: "Resfeber API Information",
+        servers: ["http://localhost:4000"]
+      }
+    },
+    // ['.routes/*.js']
+    apis: ["routes/apiRoutes.js"]
+  };
+
+//setup Swagger for auto documentation
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+
 
 //Routes
 const apiRoutes = require("./routes/apiRoutes");
 
-const {fetchTweets} = require("./fetchTweets");
 
-mongoose
-    .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log("✅ Databse Connected!");
-    });
+// mongoose
+//     .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => {
+//         console.log("✅ Databse Connected!");
+//     });
 
 app.use(express.json());
 
 app.use("/", async (req, res) => {
-    res.send("Hello World!");
+    res.send("The server is working!");
 });
 
 app.use("/api", apiRoutes);
 
-// Schedule task to run every 5 minutes.
-cron.schedule("*/1 * * * *", function () {
-    console.log("Fetching Tweets");
-//    fetchTweets();
-});
+
 
 const PORT = process.env.port || 4000;
 app.listen(PORT, () => {
