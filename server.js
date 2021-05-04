@@ -44,13 +44,11 @@ const apiRoutes = require("./routes/apiRoutes");
 
 app.use(express.json());
 
-app.use("/", async (req, res) => {
-    res.send("The server is working!");
-});
-
 app.use("/api", apiRoutes);
 
-
+app.use("/", async (req, res) => {
+  res.send("The server is working!");
+});
 
 const PORT = process.env.port || 4000;
 app.listen(PORT, () => {
