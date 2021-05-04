@@ -2,7 +2,7 @@
 const express = require("express");
 
 const instaController = require("../controllers/insta");
-const otmaController = require("../controllers/otma")
+const oneCallController = require("../controllers/oneCallController")
 const router = express.Router();
 
 module.exports = router;
@@ -23,7 +23,7 @@ router.get("/get_insta_feed", instaController.get);
 
 /**
  * @swagger
- * /api/get_location/{location}:
+ * /api/get_data/{location}:
  *  get:
  *    description: Retrive a list of 10 insta image of a location
  *    parameters:
@@ -35,7 +35,7 @@ router.get("/get_insta_feed", instaController.get);
  *      '200':
  *        description: List of 10 url
  */
- router.get("/get_location/:location", otmaController.get);
+ router.get("/get_data/:location", oneCallController.get);
 
 /**
  * @swagger
