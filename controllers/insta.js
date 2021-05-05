@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 module.exports =  {
     get_feed: async function (location){
         try{
-        const response = await fetch("https://instagram47.p.rapidapi.com/hashtag_post?hashtag=maldives", {
+        const response = await fetch(`https://instagram47.p.rapidapi.com/hashtag_post?hashtag=${location}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": process.env.INSTA_KEY,
@@ -23,7 +23,9 @@ module.exports =  {
     }
     catch(e){
         console.error("Something wrong with instagram api");
-        return ["Something wrong with instagram api"]
+        return {posts:["https://leviticuslifestyle.com/sites/default/files/imagecache/mainSlider/Luxury-Travel-3_1.jpg",
+        "http://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/travel-advice/group-travel.jpg"
+    ]};
     }
     }
 };
