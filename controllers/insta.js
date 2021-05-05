@@ -2,6 +2,7 @@ const Dummy = require("../seeds/dummy");
 const fetch = require("node-fetch");
 module.exports =  {
     get_feed: async function (location){
+        try{
         const response = await fetch("https://instagram47.p.rapidapi.com/hashtag_post?hashtag=maldives", {
         "method": "GET",
         "headers": {
@@ -17,6 +18,12 @@ module.exports =  {
             posts.push(firstPost)
         }
         let data = {posts: posts}
+        
         return data
+    }
+    catch(e){
+        console.error("Something wrong with instagram api");
+        return ["Something wrong with instagram api"]
+    }
     }
 };

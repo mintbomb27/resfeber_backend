@@ -38,7 +38,7 @@ module.exports =  {
             checklist.add('rain coat')
         }
         let check = {
-            weatherRecomendations: checklist
+            weatherRecomendations: Array.from(checklist)
         }
         let data = Object.assign({}, wdata, check)
         return data
