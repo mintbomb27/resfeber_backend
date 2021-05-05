@@ -1,11 +1,9 @@
-//const Tweet = require("../models/Tweet.schema");
+const Dummy = require("../seeds/dummy");
 
 
-//Create a new Tweet
+
 exports.get = async (req, res) => {
-    
+    console.log(Dummy.url);
 };
 
-// //Retrive all Tweets
-// exports.findAll = async (req, res) => {};
 
