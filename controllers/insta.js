@@ -3,7 +3,9 @@ const fetch = require("node-fetch");
 module.exports =  {
     get_feed: async function (location){
         try{
-        const response = await fetch(`https://instagram47.p.rapidapi.com/hashtag_post?hashtag=${location}`, {
+            let link=`https://instagram47.p.rapidapi.com/hashtag_post?hashtag=${location.toLowerCase()}`;
+            console.log("Insta query link:",link);
+        const response = await fetch(link, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": process.env.INSTA_KEY,
@@ -11,6 +13,7 @@ module.exports =  {
         }
         })
         const jsonResponse = await response.json()
+        console.log("Insta response:",jsonResponse);
         let count = jsonResponse.body.edge_hashtag_to_media.edges.length
         let posts = []
         for(var i=0;i<count;i++){
