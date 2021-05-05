@@ -11,7 +11,7 @@ module.exports =  {
         var apiResponse = await fetch(apiURL)
         var jsonResponse = await apiResponse.json()
         //Formatting Required Details
-        let data = {
+        let wdata = {
             weather:{
                 desc: jsonResponse.current.weather[0].main,
                 temp: parseInt(jsonResponse.current.temp-273.15),
@@ -19,6 +19,19 @@ module.exports =  {
                 pop: jsonResponse.hourly[0].pop*100
             }
         }
+        let desc = wdata.weather.desc.toLowerCase()
+        let checklist = []
+        if(desc.includes('snow')){
+            checklist.push(['jackets', 'muffler', 'woollen clothes', 'skii', 'boots'])
+        } else if (desc.includes('sunny')){
+            checklist.push(['cotton clothes', 'flip flops'])
+        } else if (desc.includes('rain')){
+            checklist.push(['umbrella', 'rain coat', 'caps'])
+        }
+        let check = {
+            checklist: checklist
+        }
+        let data = Object.assign({}, wdata, check)
         return data
     }
 };

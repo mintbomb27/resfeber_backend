@@ -9,7 +9,7 @@ var NodeGeocoder = require("node-geocoder");
 
 exports.get = async (req,res) => {
     let otm = await otmAPI.otmCall(req.params.location)
-    let lat = otm.lat, lon = otm.lon, otmResponse = otm.response
+    let lat = otm.lat, lon = otm.lon, otmResponse = otm.checklist
     
     var geocoder = NodeGeocoder({
         provider: "openstreetmap",
@@ -18,6 +18,7 @@ exports.get = async (req,res) => {
     let stateData = await geocoder.reverse({ lat: lat, lon: lon })
     let state = stateData[0].state;
     console.log("State:",state);
+
     let weatherResponse = await weatherAPI.weather(req.params.location, lat, lon)
     let instaResponse = await instAPI.get_feed(req.params.location)
     
