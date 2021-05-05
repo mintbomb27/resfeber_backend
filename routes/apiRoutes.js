@@ -21,7 +21,7 @@ module.exports = router;
  *      '200':
  *        description: List of 10 url
  */
-router.get("/get_insta_feed", instaController.get);
+//router.get("/get_insta_feed", instaController.get);
 
 /**
  * @swagger
