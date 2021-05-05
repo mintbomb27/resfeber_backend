@@ -12,16 +12,6 @@ module.exports = router;
 // TODO: Implement API Routes
 
 
-/**
- * @swagger
- * /api/get_insta_feed:
- *  get:
- *    description: Retrive a list of 10 insta image of a location
- *    responses:
- *      '200':
- *        description: List of 10 url
- */
-//router.get("/get_insta_feed", instaController.get);
 
 /**
  * @swagger
