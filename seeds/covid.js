@@ -86,7 +86,7 @@ exports.getAll = {
     "COVID negative report (not earlier than 72 hours of arrival) are MANDATORY for entry into Ladakh." +
     "",
 
-  "Madhya Pradesh ":
+  "Madhya Pradesh":
     "In Madhya Pradesh,  the airports are Bhopal, Indore, Jabalpur." +
     "Indore:" +
     "Health Screening:" +
