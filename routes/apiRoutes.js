@@ -3,6 +3,8 @@ const express = require("express");
 
 const instaController = require("../controllers/insta");
 const oneCallController = require("../controllers/oneCallController")
+const covidController = require("../controllers/covid");
+
 const router = express.Router();
 
 module.exports = router;
@@ -39,23 +41,29 @@ router.get("/get_insta_feed", instaController.get);
 
 /**
  * @swagger
- * /api/tweets/{location}/{resource}:
- *   get:
- *     summary: Retrieve a list tweets.
- *     description: Retrieve a list of tweets based on location and resource type.
- *     parameters:
- *             - in: path
- *               name: location
- *               type: string
- *               description: The name of the city to query.
- *             - in: path
- *               name: resource
- *               type: string
- *               description: The name of the resource to query.
- *     responses:
- *       200:
- *         description: A list of 20 tweets.
- *         
+ * /api/covid_all_states:
+ *  get:
+ *    description: Retrive covid info
+ *    responses:
+ *      '200':
+ *        description: List 
  */
-router.get("/something", instaController.get);
+router.get("/covid_all_states", covidController.getAll);
+
+/**
+ * @swagger
+ * /api/covid/{state}:
+ *  get:
+ *    description: Get covid guidelines of a pirticular state
+ *    parameters:
+ *      - in: path
+ *        name: state
+ *        type: string
+ *        description: The name of the state to query.
+ *    responses:
+ *      '200':
+ *        description: Details string
+ */
+ router.get("/covid/:state", covidController.getForState);
+
 module.exports = router;
