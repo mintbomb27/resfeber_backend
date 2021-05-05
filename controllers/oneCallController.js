@@ -10,7 +10,7 @@ var NodeGeocoder = require("node-geocoder");
 exports.get = async (req,res) => {
     let otm = await otmAPI.otmCall(req.params.location)
     let lat = otm.lat, lon = otm.lon, otmResponse = otm.checklist
-    
+    console.log("OTM response:",otmResponse)
     var geocoder = NodeGeocoder({
         provider: "openstreetmap",
       });

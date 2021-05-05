@@ -20,16 +20,25 @@ module.exports =  {
             }
         }
         let desc = wdata.weather.desc.toLowerCase()
-        let checklist = []
+        let checklist = new Set()
         if(desc.includes('snow')){
-            checklist.push(['jackets', 'muffler', 'woollen clothes', 'skii', 'boots'])
+            //checklist.add(['jackets', 'woollen clothes', 'boots'])
+            checklist.add('jackets')
+            checklist.add('woollen clothes')
+            checklist.add('boots')
+            
         } else if (desc.includes('sunny')){
-            checklist.push(['cotton clothes', 'flip flops'])
+            //checklist.add(['cotton clothes', 'flip flops'])
+            checklist.add('cotton clothes')
+            checklist.add('flip flops')
         } else if (desc.includes('rain')){
-            checklist.push(['umbrella', 'rain coat', 'caps'])
+            //checklist.add(['umbrella', 'rain coat', 'caps'])
+            checklist.add('umbrella')
+            checklist.add('caps')
+            checklist.add('rain coat')
         }
         let check = {
-            checklist: checklist
+            weatherRecomendations: checklist
         }
         let data = Object.assign({}, wdata, check)
         return data
