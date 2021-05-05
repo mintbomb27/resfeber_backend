@@ -32,7 +32,7 @@ exports.getAll = {
   "Himachal Pradesh":
     "Health Screening\n\n• COVID Test is not required\n• Thermal screening will be done for all passengers upon arrival\nQuarantine\nNo quarantine\nPassenger Obligation\nAll passengers must download Aarogya Setu App.\n \n\n        \n    ",
 
-  "Jammu & Kashmir ":
+  "Jammu & Kashmir":
     "In Jammu & Kashmir,  the airports are Jammu, Srinagar.\nHealth Screening:\nRT-PCR test is mandatory for all passengers, except\n\n• SXR : for the Defense Personnel\n• IXJ : for the Defense Personnel arriving to join duty.\nQuarantine:\nNo institutional quarantine now. Pax if tested positive will be sent for 14 days home quarantine.\nPlease visit State Government’s website for detailed Quarantine Regulations.\nPassenger Obligation:\n\n• Passenger is required to fill up ICMR Health form on arrival\n• Passenger is required to undergo COVID-19 Test at the Airport\n• All passengers must download Aarogya Setu App.\n\n        \n    \n",
 
   Jharkhand:
@@ -255,7 +255,7 @@ exports.getAll = {
     "• Both e-invite & COVID negative report (not earlier than 72 hours) are MANDATORY for entry into Meghalaya state. RT-PCR timeline starts from the swab collection time." +
     "• Tourists shall not be permitted entry into the state of Meghalaya till 10th May, 2021",
 
-  "Mizoram (m-Pass Mandatory)":
+  "Mizoram":
     "All Passengers need to have valid m-pass which can be obtained by applying online on State website: Generate m-Pass" +
     "" +
     "In Mizoram,  the airports are Aizawl." +
@@ -354,7 +354,7 @@ exports.getAll = {
     "• Passengers travelling to Udaipur are mandatorily required to upload a copy of their RT-PCR negative report on http://emitra.rajasthan.gov.in" +
     "",
 
-  "Tamil Nadu (e-Pass Mandatory)":
+  "Tamil Nadu":
     "All passengers travelling to Tamil Nadu shall be required to register on State website and obtain TN e-pass- Generate e-Pass" +
     "" +
     "In Tamil Nadu,  the airports are Chennai, Coimbatore, Madurai, Tiruchirappalli, Tuticorin." +
